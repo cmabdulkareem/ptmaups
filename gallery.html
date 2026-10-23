@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>School Memories | Panakkad Thangal Memorial AUP School, Bedira</title>
+  <meta name="description" content="Explore a demonstration chronological gallery of school life at Panakkad Thangal Memorial AUP School, Bedira. Photographs are paired with sample captions and dates.">
+  <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="gallery">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__location">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        Bedira, Kasaragod, Kerala, India
+      </p>
+      <nav class="topbar__nav" aria-label="Utility">
+        <a href="notices.html">Notices</a>
+        <a href="school-calendar.html">Academic Calendar</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Panakkad Thangal Memorial AUP School, Bedira — home">
+        <img class="brand__emblem" src="assets/images/school-emblem.png" alt="" width="98" height="98">
+        <span class="brand__text">
+          <span class="brand__eyebrow">Panakkad Thangal Memorial</span>
+          <span class="brand__name">PTMAUP School, Bedira<span class="brand__accent">.</span></span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <div class="header-estd" aria-label="Established 1976">
+          <span class="header-estd__label">Estd.</span>
+          <span class="header-estd__year">1976</span>
+        </div>
+        <a class="btn btn--primary btn--sm header-cta" href="admissions.html">Admission Enquiry</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-bar">
+    <div class="container">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html" data-nav="home">Home</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-about" data-nav="about">
+              About
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-about" aria-label="About the school">
+              <li><a href="about.html">About the School</a></li>
+              <li><a href="about.html#principal">Principal's Message</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-academics" data-nav="academics">
+              Academics
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-academics" aria-label="Academics">
+              <li><a href="academics.html">Academic Overview</a></li>
+              <li><a href="school-calendar.html">Academic Calendar</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="facilities.html" data-nav="facilities">Facilities</a></li>
+          <li><a class="nav-link" href="activities.html" data-nav="activities">Activities</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-news" data-nav="news">
+              News &amp; Events
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-news" aria-label="News and events">
+              <li><a href="events.html">News &amp; Events</a></li>
+              <li><a href="notices.html">School Notices</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="gallery.html" data-nav="gallery">Gallery</a></li>
+          <li><a class="nav-link" href="admissions.html" data-nav="admissions">Admissions</a></li>
+          <li><a class="nav-link" href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="announcement" id="announcement" hidden>
+    <div class="container announcement__inner">
+      <span class="announcement__label">Announcement</span>
+      <p class="announcement__text" id="announcement-text"></p>
+      <a class="announcement__link" href="notices.html">View notices
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="announcement__close" type="button" aria-label="Dismiss announcement">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Gallery</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <p class="eyebrow eyebrow--light">Memories timeline</p>
+            <h1>School memories, through the years</h1>
+            <p class="page-hero__lead">A chronological preview of school life at Bedira, arranged by year and occasion. This demonstration pairs school photographs with sample captions and dates; confirm details with school records before publication.</p>
+          </div>
+          <aside class="page-hero__aside" aria-label="Gallery archive status">
+            <p class="page-hero__aside-label">Archive status</p>
+            <p class="page-hero__aside-value">Demonstration preview</p>
+            <small>Draft captions and dates — verify before publication</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper memory-archive" aria-labelledby="memory-heading">
+      <div class="container">
+        <div class="memory-intro">
+          <div class="memory-intro__copy">
+            <p class="eyebrow">The school archive</p>
+            <h2 id="memory-heading">Every school day, in its place</h2>
+            <p>Memories are arranged from the earliest year to the latest, with each entry gathering related photographs and their story. Select a collection to look through in full.</p>
+          </div>
+          <div class="memory-summary" aria-live="polite">
+            <span class="memory-summary__label">Preview contents</span>
+            <strong id="memory-summary-value">Awaiting photographs</strong>
+            <span id="memory-summary-detail">New memories will be added here</span>
+          </div>
+        </div>
+
+        <div class="memory-demo-note" role="note">
+          <span class="memory-demo-note__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5M12 16.5v.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <p><strong>Demonstration archive.</strong> These collections pair school photographs with sample captions and dates. They are not official school records; names, dates and consent must be confirmed before publication.</p>
+        </div>
+
+        <div class="memory-controls is-empty" id="memory-controls">
+          <div class="memory-controls__nav">
+            <span class="memory-controls__label" id="memory-years-label">Jump to a year</span>
+            <nav class="memory-years" id="memory-years" aria-labelledby="memory-years-label">
+              <span class="memory-years__empty">Years will appear with the first memory</span>
+            </nav>
+          </div>
+          <p class="memory-position" aria-hidden="true">
+            <span class="memory-position__dot"></span>
+            <span class="memory-position__caption">Archive</span>
+            <strong id="memory-position-year">In progress</strong>
+          </p>
+        </div>
+
+        <div class="memory-timeline is-empty" id="memory-timeline">
+          <div class="memory-empty">
+            <div class="memory-empty__art" aria-hidden="true">
+              <span class="memory-empty__since">Since 1976</span>
+              <div class="memory-empty__figure">
+                <svg viewBox="0 0 420 320" fill="none">
+                  <path d="M28 18v284" stroke="rgba(255,255,255,0.18)"/>
+                  <circle cx="28" cy="54" r="5" fill="#f5c518"/>
+                  <circle cx="28" cy="158" r="4" stroke="rgba(255,255,255,0.35)"/>
+                  <circle cx="28" cy="264" r="4" stroke="rgba(255,255,255,0.35)"/>
+                  <rect x="92" y="96" width="222" height="154" rx="5" transform="rotate(-6 92 96)" stroke="rgba(255,255,255,0.22)"/>
+                  <rect x="118" y="58" width="242" height="174" rx="6" fill="#0b5e74" stroke="rgba(255,255,255,0.28)"/>
+                  <path d="M118 88h242" stroke="rgba(255,255,255,0.16)"/>
+                  <circle cx="137" cy="73" r="4" fill="#f5c518"/>
+                  <circle cx="151" cy="73" r="3" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="146" y="110" width="186" height="92" rx="3" stroke="rgba(255,255,255,0.22)" stroke-dasharray="5 6"/>
+                  <g stroke="#ffd95e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="204" y="138" width="60" height="48" rx="3"/>
+                    <path d="M204 152h60M220 131v14M248 131v14"/>
+                    <path d="m228 168 9 9 16-18"/>
+                  </g>
+                  <path d="M146 238h58" stroke="#f5c518" stroke-width="2"/>
+                </svg>
+              </div>
+              <p class="memory-empty__art-caption">A place for the days that shaped our school.</p>
+            </div>
+            <div class="memory-empty__copy">
+              <span class="tag">Archive in preparation</span>
+              <h2>The timeline is ready for its first memory</h2>
+              <p class="memory-empty__message">School memories are being organised. Photographs and stories from past school days will appear here soon.</p>
+              <ul class="memory-empty__points">
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M6 8v8M12 8v8M18 8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  <span>Oldest memories first</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  <span>Grouped by day and year</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="14" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10v9h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Full collections in one view</span>
+                </li>
+              </ul>
+              <a class="link-arrow" href="about.html">Read the school's story
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="archive-notes-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__intro">
+            <p class="eyebrow">Before publication</p>
+            <h2 id="archive-notes-title">A careful school archive</h2>
+            <p>School photographs are part of a child's educational record and must be shared responsibly.</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="panel panel--paper">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Official images only</h3>
+            <p class="muted">This preview pairs supplied photographs with draft captions. The published archive will show only photographs approved by the school, with consent recorded; unrelated stock images will not be used.</p>
+          </article>
+          <article class="panel panel--paper">
+            <span class="icon-box icon-box--gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Consent and care</h3>
+            <p class="muted">Images of students will be published only with appropriate consent and according to the school's safeguarding practice.</p>
+          </article>
+          <article class="panel panel--paper">
+            <span class="icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 12h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Accurate captions</h3>
+            <p class="muted">Every photograph will carry a clear caption, date and accessible description so the archive remains useful and inclusive.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="memory-modal" id="memory-modal" hidden>
+    <button class="memory-modal__backdrop" type="button" data-memory-close tabindex="-1" aria-label="Close memory collection"></button>
+    <div class="memory-modal__dialog" id="memory-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="memory-modal-title" aria-describedby="memory-modal-description">
+      <header class="memory-modal__head">
+        <div class="memory-modal__heading">
+          <p class="memory-modal__kicker" id="memory-modal-kicker">Memory collection</p>
+          <h2 class="memory-modal__title" id="memory-modal-title" tabindex="-1"></h2>
+          <p class="memory-modal__meta">
+            <span class="memory-modal__date">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 3v4M16 3v4M3.5 10h17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <span id="memory-modal-date"></span>
+            </span>
+            <span id="memory-modal-count"></span>
+          </p>
+        </div>
+        <button class="memory-modal__close" type="button" data-memory-close data-modal-autofocus aria-label="Close memory collection">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+      <div class="memory-modal__scroll" id="memory-modal-scroll">
+        <p class="memory-modal__desc" id="memory-modal-description"></p>
+        <div class="memory-modal__gallery-head">
+          <h3>Photographs</h3>
+          <span>Select a photograph to enlarge</span>
+        </div>
+        <div class="memory-modal__grid" id="memory-modal-grid"></div>
+        <p class="memory-modal__no-photos" id="memory-modal-no-photos" hidden>Photographs for this memory are still being prepared.</p>
+      </div>
+    </div>
+
+    <section class="memory-viewer" id="memory-viewer" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+      <div class="memory-viewer__bar">
+        <button class="memory-viewer__back" type="button" data-viewer-close aria-label="Back to all photographs">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="memory-viewer__back-label">All photographs</span>
+        </button>
+        <p class="memory-viewer__counter" id="memory-viewer-counter"></p>
+        <p class="sr-only" id="memory-viewer-status" aria-live="polite"></p>
+        <button class="memory-viewer__close" type="button" data-viewer-close aria-label="Close photograph viewer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="memory-viewer__stage" id="memory-viewer-stage">
+        <button class="memory-viewer__nav memory-viewer__nav--prev" type="button" data-viewer-prev aria-label="Previous photograph">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <figure class="memory-viewer__figure">
+          <img class="memory-viewer__image" id="memory-viewer-image" alt="">
+          <div class="memory-viewer__fallback" id="memory-viewer-fallback" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m4 18 5-5 3 3 3-3 5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <p>This photograph could not be loaded.</p>
+          </div>
+          <figcaption class="memory-viewer__caption" id="memory-viewer-caption"></figcaption>
+        </figure>
+        <button class="memory-viewer__nav memory-viewer__nav--next" type="button" data-viewer-next aria-label="Next photograph">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__eyebrow">Panakkad Thangal Memorial</p>
+        <p class="footer__name">PTMAUP School, Bedira<span>.</span></p>
+        <p class="footer__about">A community school in Bedira, Kasaragod, Kerala, established in 1976 and guided by the motto &ldquo;Educating for Life.&rdquo;</p>
+        <p class="footer__location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          Bedira, Kasaragod, Kerala, India
+        </p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Information</h2>
+        <ul>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="notices.html">Notices</a></li>
+          <li><a href="events.html">News &amp; Events</a></li>
+          <li><a href="school-calendar.html">Academic Calendar</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__col--contact">
+        <h2 class="footer__title">School Office</h2>
+        <address>
+          <span>Bedira, Kasaragod, Kerala, India</span>
+          <span class="footer__tbc">Full postal address to be confirmed</span>
+          <span class="footer__tbc">Telephone to be confirmed</span>
+          <span class="footer__tbc">Official email to be confirmed</span>
+          <span class="footer__tbc">Office hours to be confirmed</span>
+        </address>
+        <a class="footer__link" href="contact.html">Contact the school
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span data-current-year>2026</span> Panakkad Thangal Memorial AUP School, Bedira. All rights reserved.</p>
+      <p class="footer__note">Official details marked &ldquo;to be confirmed&rdquo; await publication by the school office.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="js/school-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery-data.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

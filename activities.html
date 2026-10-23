@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Activities | Panakkad Thangal Memorial AUP School, Bedira</title>
+  <meta name="description" content="Cultural programmes, arts, sports, clubs, environmental awareness and community participation at Panakkad Thangal Memorial AUP School, Bedira.">
+  <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="activities">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__location">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        Bedira, Kasaragod, Kerala, India
+      </p>
+      <nav class="topbar__nav" aria-label="Utility">
+        <a href="notices.html">Notices</a>
+        <a href="school-calendar.html">Academic Calendar</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Panakkad Thangal Memorial AUP School, Bedira — home">
+        <img class="brand__emblem" src="assets/images/school-emblem.png" alt="" width="98" height="98">
+        <span class="brand__text">
+          <span class="brand__eyebrow">Panakkad Thangal Memorial</span>
+          <span class="brand__name">PTMAUP School, Bedira<span class="brand__accent">.</span></span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <div class="header-estd" aria-label="Established 1976">
+          <span class="header-estd__label">Estd.</span>
+          <span class="header-estd__year">1976</span>
+        </div>
+        <a class="btn btn--primary btn--sm header-cta" href="admissions.html">Admission Enquiry</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-bar">
+    <div class="container">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html" data-nav="home">Home</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-about" data-nav="about">
+              About
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-about" aria-label="About the school">
+              <li><a href="about.html">About the School</a></li>
+              <li><a href="about.html#principal">Principal's Message</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-academics" data-nav="academics">
+              Academics
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-academics" aria-label="Academics">
+              <li><a href="academics.html">Academic Overview</a></li>
+              <li><a href="school-calendar.html">Academic Calendar</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="facilities.html" data-nav="facilities">Facilities</a></li>
+          <li><a class="nav-link" href="activities.html" data-nav="activities">Activities</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-news" data-nav="news">
+              News &amp; Events
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-news" aria-label="News and events">
+              <li><a href="events.html">News &amp; Events</a></li>
+              <li><a href="notices.html">School Notices</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="gallery.html" data-nav="gallery">Gallery</a></li>
+          <li><a class="nav-link" href="admissions.html" data-nav="admissions">Admissions</a></li>
+          <li><a class="nav-link" href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="announcement" id="announcement" hidden>
+    <div class="container announcement__inner">
+      <span class="announcement__label">Announcement</span>
+      <p class="announcement__text" id="announcement-text"></p>
+      <a class="announcement__link" href="notices.html">View notices
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="announcement__close" type="button" aria-label="Dismiss announcement">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Activities</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <p class="eyebrow eyebrow--light">Student activities</p>
+            <h1>More than lessons</h1>
+            <p class="page-hero__lead">Cultural life, creative work, sport and community participation give students room to grow beyond the classroom.</p>
+          </div>
+          <aside class="page-hero__aside" aria-label="Activity information status">
+            <p class="page-hero__aside-label">Programme information</p>
+            <p class="page-hero__aside-value">Dates to be confirmed</p>
+            <small>Official activity calendar</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <p class="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5.5M12 7.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>The activity areas below describe the kinds of opportunities a school community can offer. Specific programmes, teams, dates and achievements will be published only when confirmed by the school. No awards or participation figures have been invented.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__intro">
+            <p class="eyebrow">Activity areas</p>
+            <h2>A fuller school experience</h2>
+            <p>Participation helps students build confidence, cooperation and a sense of belonging.</p>
+          </div>
+          <a class="link-arrow" href="events.html">School events
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card" id="cultural">
+            <div class="activity-card__top">
+              <span class="tag">Culture</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 8h10M5 21h14M8 3h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Cultural programmes</h3>
+            <p>School celebrations, music, drama and speaking opportunities that connect students with the cultural life of their community.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Programme dates to be confirmed</span>
+            </div>
+          </article>
+
+          <article class="activity-card" id="arts">
+            <div class="activity-card__top">
+              <span class="tag tag--gold">Creative</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.5a2 2 0 0 0 0-4H13a2 2 0 0 1 0-4h3a5 5 0 0 0 0-10h-4Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="7.5" cy="10" r="1" fill="currentColor"/><circle cx="9.5" cy="6.5" r="1" fill="currentColor"/><circle cx="14" cy="6" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>Arts and creativity</h3>
+            <p>Drawing, craft, design and performance activities that encourage observation, imagination and confidence in self-expression.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Activity schedule to be confirmed</span>
+            </div>
+          </article>
+
+          <article class="activity-card" id="sports">
+            <div class="activity-card__top">
+              <span class="tag">Sport</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3c3 3.5 3 14 0 18M3 12h18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Sports and games</h3>
+            <p>Physical activity and team games that support fitness, discipline and the experience of working towards a shared goal.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Teams and schedules to be confirmed</span>
+            </div>
+          </article>
+
+          <article class="activity-card" id="clubs">
+            <div class="activity-card__top">
+              <span class="tag tag--gold">Groups</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14c2.8 0 5 1.8 5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Clubs and group activities</h3>
+            <p>Small groups give students the chance to pursue shared interests, plan together and take on responsibility.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Club information to be confirmed</span>
+            </div>
+          </article>
+
+          <article class="activity-card" id="environment">
+            <div class="activity-card__top">
+              <span class="tag">Environment</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5-2.5-8-6-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 7.5-8 10Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 15V9M9.5 11.5 12 9l2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Environmental awareness</h3>
+            <p>Activities that encourage care for the school campus, local surroundings and the natural environment.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Activities to be confirmed</span>
+            </div>
+          </article>
+
+          <article class="activity-card" id="community">
+            <div class="activity-card__top">
+              <span class="tag tag--gold">Community</span>
+              <svg class="activity-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9l8-5 8 5v10M8 19v-5h8v5M4 19h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Community participation</h3>
+            <p>Opportunities for students to contribute to school life and understand their place within the wider community.</p>
+            <div class="activity-card__foot">
+              <span class="activity-card__date">Programmes to be confirmed</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container split split--center">
+        <div>
+          <p class="eyebrow">Student development</p>
+          <h2>What participation builds</h2>
+          <p>Activities are not an extra to education. They are part of how young people learn to work with others, manage challenges and discover what they enjoy.</p>
+          <p>The school's specific activity calendar and student achievements will be published when confirmed. This page does not list awards, competition results or participation statistics that have not been supplied.</p>
+          <p><a class="link-arrow" href="school-calendar.html">Check the school calendar
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a></p>
+        </div>
+        <ul class="value-list">
+          <li>
+            <span class="value-list__num">01</span>
+            <div>
+              <h3>Confidence</h3>
+              <p>Speaking, performing and contributing in a group help students become more assured.</p>
+            </div>
+          </li>
+          <li>
+            <span class="value-list__num">02</span>
+            <div>
+              <h3>Cooperation</h3>
+              <p>Teams and group projects teach students to listen, share responsibility and resolve differences.</p>
+            </div>
+          </li>
+          <li>
+            <span class="value-list__num">03</span>
+            <div>
+              <h3>Creativity</h3>
+              <p>Arts and cultural activity give students space to experiment, imagine and express ideas.</p>
+            </div>
+          </li>
+          <li>
+            <span class="value-list__num">04</span>
+            <div>
+              <h3>Responsibility</h3>
+              <p>Caring for shared spaces and taking part in community work builds habits of contribution.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="panel panel--paper" style="display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+          <div>
+            <p class="eyebrow" style="margin-bottom:0.5rem;">Events</p>
+            <h2 style="margin-bottom:0.3rem;">See what's coming up</h2>
+            <p class="muted" style="margin:0;">The events page uses demonstration records until official school events are supplied.</p>
+          </div>
+          <a class="btn btn--primary" href="events.html">News &amp; events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__eyebrow">Panakkad Thangal Memorial</p>
+        <p class="footer__name">PTMAUP School, Bedira<span>.</span></p>
+        <p class="footer__about">A community school in Bedira, Kasaragod, Kerala, established in 1976 and guided by the motto &ldquo;Educating for Life.&rdquo;</p>
+        <p class="footer__location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          Bedira, Kasaragod, Kerala, India
+        </p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Information</h2>
+        <ul>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="notices.html">Notices</a></li>
+          <li><a href="events.html">News &amp; Events</a></li>
+          <li><a href="school-calendar.html">Academic Calendar</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__col--contact">
+        <h2 class="footer__title">School Office</h2>
+        <address>
+          <span>Bedira, Kasaragod, Kerala, India</span>
+          <span class="footer__tbc">Full postal address to be confirmed</span>
+          <span class="footer__tbc">Telephone to be confirmed</span>
+          <span class="footer__tbc">Official email to be confirmed</span>
+          <span class="footer__tbc">Office hours to be confirmed</span>
+        </address>
+        <a class="footer__link" href="contact.html">Contact the school
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span data-current-year>2026</span> Panakkad Thangal Memorial AUP School, Bedira. All rights reserved.</p>
+      <p class="footer__note">Official details marked &ldquo;to be confirmed&rdquo; await publication by the school office.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="js/school-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

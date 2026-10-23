@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Events | Panakkad Thangal Memorial AUP School, Bedira</title>
+  <meta name="description" content="School news and events at Panakkad Thangal Memorial AUP School, Bedira. Demonstration listings show how official announcements and events will appear.">
+  <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="events">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__location">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        Bedira, Kasaragod, Kerala, India
+      </p>
+      <nav class="topbar__nav" aria-label="Utility">
+        <a href="notices.html">Notices</a>
+        <a href="school-calendar.html">Academic Calendar</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Panakkad Thangal Memorial AUP School, Bedira — home">
+        <img class="brand__emblem" src="assets/images/school-emblem.png" alt="" width="98" height="98">
+        <span class="brand__text">
+          <span class="brand__eyebrow">Panakkad Thangal Memorial</span>
+          <span class="brand__name">PTMAUP School, Bedira<span class="brand__accent">.</span></span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <div class="header-estd" aria-label="Established 1976">
+          <span class="header-estd__label">Estd.</span>
+          <span class="header-estd__year">1976</span>
+        </div>
+        <a class="btn btn--primary btn--sm header-cta" href="admissions.html">Admission Enquiry</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-bar">
+    <div class="container">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html" data-nav="home">Home</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-about" data-nav="about">
+              About
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-about" aria-label="About the school">
+              <li><a href="about.html">About the School</a></li>
+              <li><a href="about.html#principal">Principal's Message</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-academics" data-nav="academics">
+              Academics
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-academics" aria-label="Academics">
+              <li><a href="academics.html">Academic Overview</a></li>
+              <li><a href="school-calendar.html">Academic Calendar</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="facilities.html" data-nav="facilities">Facilities</a></li>
+          <li><a class="nav-link" href="activities.html" data-nav="activities">Activities</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link nav-link--toggle" type="button" aria-expanded="false" aria-controls="dropdown-news" data-nav="news">
+              News &amp; Events
+              <svg class="nav-link__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <ul class="dropdown" id="dropdown-news" aria-label="News and events">
+              <li><a href="events.html">News &amp; Events</a></li>
+              <li><a href="notices.html">School Notices</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="gallery.html" data-nav="gallery">Gallery</a></li>
+          <li><a class="nav-link" href="admissions.html" data-nav="admissions">Admissions</a></li>
+          <li><a class="nav-link" href="contact.html" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="announcement" id="announcement" hidden>
+    <div class="container announcement__inner">
+      <span class="announcement__label">Announcement</span>
+      <p class="announcement__text" id="announcement-text"></p>
+      <a class="announcement__link" href="notices.html">View notices
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="announcement__close" type="button" aria-label="Dismiss announcement">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">News &amp; Events</span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <p class="eyebrow eyebrow--light">News and events</p>
+            <h1>School news, gathered in one place</h1>
+            <p class="page-hero__lead">Announcements, academic notices, cultural programmes and school celebrations will be published here as official information becomes available.</p>
+          </div>
+          <aside class="page-hero__aside" aria-label="Listing status">
+            <p class="page-hero__aside-label">Current listings</p>
+            <p class="page-hero__aside-value">Demonstration content</p>
+            <small>Official events will replace these samples</small>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5.5M12 7.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Every item below is a clearly labelled sample record. These are not confirmed school events. The filters and detail view are fully functional so that official listings can be dropped in later.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__intro">
+            <p class="eyebrow">Latest school news</p>
+            <h2>News &amp; events</h2>
+            <p>Use the categories to explore announcements, academic notices, activities and school celebrations.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <div class="filter-group" id="event-filters" role="group" aria-label="Filter events by category">
+            <button type="button" class="filter-chip is-active" data-category="All" aria-pressed="true">All</button>
+            <button type="button" class="filter-chip" data-category="Announcements" aria-pressed="false">Announcements</button>
+            <button type="button" class="filter-chip" data-category="Academic" aria-pressed="false">Academic</button>
+            <button type="button" class="filter-chip" data-category="Activities" aria-pressed="false">Activities</button>
+            <button type="button" class="filter-chip" data-category="Events" aria-pressed="false">Events</button>
+          </div>
+          <p class="toolbar__meta" id="event-count" aria-live="polite">Loading events…</p>
+        </div>
+
+        <div class="event-grid" id="event-grid"></div>
+        <div class="empty-state" id="event-empty" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 3v4M16 3v4M3 10h18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>No events in this category</h3>
+          <p>Try another category. Official event records will appear here once the school publishes them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__intro">
+            <p class="eyebrow">Past events</p>
+            <h2>From the archive</h2>
+            <p>Past events will be kept here for reference. The entries below are demonstration samples only.</p>
+          </div>
+        </div>
+        <ul class="calendar-list__items" id="past-events"></ul>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="grid-3">
+          <article class="panel">
+            <span class="tag">Announcements</span>
+            <h3>Official notices</h3>
+            <p class="muted">Short announcements from the school office, including changes to routines and important information for families.</p>
+          </article>
+          <article class="panel">
+            <span class="tag tag--gold">Academic</span>
+            <h3>Academic notices</h3>
+            <p class="muted">Examination schedules, class-level information and academic dates will be published when confirmed.</p>
+          </article>
+          <article class="panel">
+            <span class="tag">Celebrations</span>
+            <h3>School celebrations</h3>
+            <p class="muted">Cultural programmes and school celebrations will be listed with approved dates and details.</p>
+          </article>
+        </div>
+        <p class="note section-foot">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5.5M12 7.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>For official notice-board content, visit the <a href="notices.html">school notices page</a>. The <a href="school-calendar.html">academic calendar</a> also shows sample entries.</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title" tabindex="-1" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <div class="modal__head">
+        <div>
+          <span class="tag" id="event-modal-tag">Event</span>
+          <h2 class="modal__title" id="event-modal-title">Event details</h2>
+        </div>
+        <button class="modal__close" type="button" data-modal-close data-autofocus aria-label="Close event details">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__meta" id="event-modal-meta"></div>
+        <div id="event-modal-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <p class="footer__eyebrow">Panakkad Thangal Memorial</p>
+        <p class="footer__name">PTMAUP School, Bedira<span>.</span></p>
+        <p class="footer__about">A community school in Bedira, Kasaragod, Kerala, established in 1976 and guided by the motto &ldquo;Educating for Life.&rdquo;</p>
+        <p class="footer__location">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          Bedira, Kasaragod, Kerala, India
+        </p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Information</h2>
+        <ul>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="notices.html">Notices</a></li>
+          <li><a href="events.html">News &amp; Events</a></li>
+          <li><a href="school-calendar.html">Academic Calendar</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__col--contact">
+        <h2 class="footer__title">School Office</h2>
+        <address>
+          <span>Bedira, Kasaragod, Kerala, India</span>
+          <span class="footer__tbc">Full postal address to be confirmed</span>
+          <span class="footer__tbc">Telephone to be confirmed</span>
+          <span class="footer__tbc">Official email to be confirmed</span>
+          <span class="footer__tbc">Office hours to be confirmed</span>
+        </address>
+        <a class="footer__link" href="contact.html">Contact the school
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span data-current-year>2026</span> Panakkad Thangal Memorial AUP School, Bedira. All rights reserved.</p>
+      <p class="footer__note">Official details marked &ldquo;to be confirmed&rdquo; await publication by the school office.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="js/school-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>
