@@ -298,39 +298,45 @@
   var homeNotices = doc.getElementById("home-notices");
   if (homeNotices && window.SCHOOL_DATA && window.SCHOOL_DATA.notices && window.PTM) {
     var escapeHome = window.PTM.escapeHTML;
-    homeNotices.innerHTML = window.SCHOOL_DATA.notices
+    var notices = window.SCHOOL_DATA.notices
       .slice()
       .sort(function (a, b) {
         return b.date.localeCompare(a.date);
       })
-      .slice(0, 3)
-      .map(function (notice) {
-        var date = shortMonth(notice.date);
-        return (
-          '<li class="notice-preview">' +
-          '<div class="notice-preview__date" aria-hidden="true">' +
-          '<span class="notice-preview__day">' + date.day + "</span>" +
-          '<span class="notice-preview__month">' + escapeHome(date.month) + "</span>" +
-          "</div>" +
-          '<div class="notice-preview__body">' +
-          '<div class="notice-preview__meta">' +
-          '<span class="tag">' + escapeHome(notice.category) + "</span>" +
-          '<span class="tag tag--sample">Sample</span>' +
-          "<span>" + escapeHome(window.PTM.formatDate(notice.date)) + "</span>" +
-          "</div>" +
-          '<a href="notices.html">' + escapeHome(notice.title) + "</a>" +
-          '<p class="notice-preview__excerpt">' + escapeHome(notice.excerpt) + "</p>" +
-          "</div>" +
-          "</li>"
-        );
-      })
-      .join("");
+      .slice(0, 3);
+
+    if (!notices.length) {
+      homeNotices.innerHTML = '<li class="list-empty">No notices have been published yet.</li>';
+    } else {
+      homeNotices.innerHTML = notices
+        .map(function (notice) {
+          var date = shortMonth(notice.date);
+          return (
+            '<li class="notice-preview">' +
+            '<div class="notice-preview__date" aria-hidden="true">' +
+            '<span class="notice-preview__day">' + date.day + "</span>" +
+            '<span class="notice-preview__month">' + escapeHome(date.month) + "</span>" +
+            "</div>" +
+            '<div class="notice-preview__body">' +
+            '<div class="notice-preview__meta">' +
+            '<span class="tag">' + escapeHome(notice.category) + "</span>" +
+            (notice.isSample ? '<span class="tag tag--sample">Sample</span>' : "") +
+            "<span>" + escapeHome(window.PTM.formatDate(notice.date)) + "</span>" +
+            "</div>" +
+            '<a href="notices.html">' + escapeHome(notice.title) + "</a>" +
+            '<p class="notice-preview__excerpt">' + escapeHome(notice.excerpt) + "</p>" +
+            "</div>" +
+            "</li>"
+          );
+        })
+        .join("");
+    }
   }
 
   var homeEvents = doc.getElementById("home-events");
   if (homeEvents && window.SCHOOL_DATA && window.SCHOOL_DATA.events && window.PTM) {
     var escapeEvents = window.PTM.escapeHTML;
-    homeEvents.innerHTML = window.SCHOOL_DATA.events
+    var upcomingEvents = window.SCHOOL_DATA.events
       .filter(function (event) {
         return !event.past;
       })
@@ -338,24 +344,33 @@
       .sort(function (a, b) {
         return a.date.localeCompare(b.date);
       })
-      .slice(0, 3)
-      .map(function (event) {
-        var date = shortMonth(event.date);
-        return (
-          '<li class="event-mini">' +
-          '<div class="event-mini__date" aria-hidden="true">' +
-          '<span class="event-mini__day">' + date.day + "</span>" +
-          '<span class="event-mini__month">' + escapeEvents(date.month) + "</span>" +
-          "</div>" +
-          "<div>" +
-          '<span class="tag">' + escapeEvents(event.category) + "</span>" +
-          '<h4><a href="events.html">' + escapeEvents(event.title) + "</a></h4>" +
-          "<p>" + escapeEvents(window.PTM.formatDate(event.date)) + "</p>" +
-          "</div>" +
-          "</li>"
-        );
-      })
-      .join("");
+      .slice(0, 3);
+
+    if (!upcomingEvents.length) {
+      homeEvents.innerHTML = '<li class="list-empty">No upcoming events have been published yet.</li>';
+    } else {
+      homeEvents.innerHTML = upcomingEvents
+        .map(function (event) {
+          var date = shortMonth(event.date);
+          return (
+            '<li class="event-mini">' +
+            '<div class="event-mini__date" aria-hidden="true">' +
+            '<span class="event-mini__day">' + date.day + "</span>" +
+            '<span class="event-mini__month">' + escapeEvents(date.month) + "</span>" +
+            "</div>" +
+            "<div>" +
+            '<div class="event-mini__meta">' +
+            '<span class="tag">' + escapeEvents(event.category) + "</span>" +
+            (event.isSample ? '<span class="tag tag--sample">Sample</span>' : "") +
+            "</div>" +
+            '<h4><a href="events.html">' + escapeEvents(event.title) + "</a></h4>" +
+            "<p>" + escapeEvents(window.PTM.formatDate(event.date)) + "</p>" +
+            "</div>" +
+            "</li>"
+          );
+        })
+        .join("");
+    }
   }
 
   /* ---------- FAQ rendering from central data ---------- */

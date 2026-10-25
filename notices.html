@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>School Notices | Panakkad Thangal Memorial AUP School, Bedira</title>
-  <meta name="description" content="School notice board for Panakkad Thangal Memorial AUP School, Bedira, with search, category filters and demonstration notices.">
+  <meta name="description" content="School notice board for Panakkad Thangal Memorial AUP School, Bedira, with search, category filters and notices for students and families.">
   <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,18 +121,23 @@
           <div>
             <p class="eyebrow eyebrow--light">School notices</p>
             <h1>Notice board</h1>
-            <p class="page-hero__lead">Announcements and information for students, parents and staff. Notices shown here are demonstration records until the school publishes official content.</p>
+            <p class="page-hero__lead">Announcements and information for students, parents and staff. Newest notices appear first.</p>
           </div>
-          <aside class="page-hero__aside" aria-label="Notice board status">
+          <aside class="page-hero__aside" data-cms-demo aria-label="Notice board status">
             <p class="page-hero__aside-label">Official notices</p>
             <p class="page-hero__aside-value">Awaiting publication</p>
             <small>Current entries are samples</small>
+          </aside>
+          <aside class="page-hero__aside" data-cms-only aria-label="Notice board status">
+            <p class="page-hero__aside-label">Notice board</p>
+            <p class="page-hero__aside-value">School office updates</p>
+            <small>Newest notices appear first</small>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
+    <section class="section section--tight" data-cms-demo>
       <div class="container">
         <p class="note note--warn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9v5M12 17.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -159,7 +164,7 @@
                 <option value="oldest">Oldest first</option>
               </select>
             </div>
-            <span class="tag tag--sample">Demonstration records</span>
+            <span class="tag tag--sample" data-cms-demo>Demonstration records</span>
           </div>
 
           <div class="notice-filters" id="notice-filters" role="group" aria-label="Filter notices by category"></div>
@@ -170,7 +175,7 @@
           </div>
 
           <noscript>
-            <p class="note">JavaScript is required to search, filter and sort the notice board. The page remains readable without it, but no sample records can be displayed.</p>
+            <p class="note">JavaScript is required to search, filter and sort the notice board.</p>
           </noscript>
 
           <ul class="notice-list-full" id="notice-list" aria-label="School notices"></ul>
@@ -213,7 +218,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <h3>Official only</h3>
-            <p class="muted">Only verified notices supplied by the school office will replace the sample records on this page.</p>
+            <p class="muted"><span data-cms-demo>Only verified notices supplied by the school office will replace the sample records on this page.</span><span data-cms-only>Notices on this page are published by the school office after approval.</span></p>
           </article>
         </div>
       </div>
@@ -224,18 +229,18 @@
         <div>
           <p class="eyebrow">Related pages</p>
           <h2>More school information</h2>
-          <p>Notices are published alongside the school's events page and academic calendar. Each page makes clear which information is official and which is sample content.</p>
+          <p>Notices are published alongside the school's events page and academic calendar.</p>
         </div>
         <div class="info-tiles info-tiles--3">
           <a class="info-tile" href="events.html">
             <span class="info-tile__label">School life</span>
             <span class="info-tile__value">News &amp; Events</span>
-            <span class="info-tile__note">Sample event listings with category filters</span>
+            <span class="info-tile__note">Event listings with category filters</span>
           </a>
           <a class="info-tile" href="school-calendar.html">
             <span class="info-tile__label">Planning</span>
             <span class="info-tile__value">Academic Calendar</span>
-            <span class="info-tile__note">Monthly view with sample entries</span>
+            <span class="info-tile__note">Monthly academic calendar</span>
           </a>
           <a class="info-tile" href="contact.html">
             <span class="info-tile__label">Questions</span>
@@ -306,6 +311,7 @@
   </button>
 
   <script src="js/school-data.js"></script>
+  <script src="js/cms-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/notices.js"></script>
 </body>

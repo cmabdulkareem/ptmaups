@@ -10,6 +10,8 @@
   var filterGroup = document.getElementById("event-filters");
   var countNode = document.getElementById("event-count");
   var emptyState = document.getElementById("event-empty");
+  var emptyTitle = emptyState ? emptyState.querySelector("h3") : null;
+  var emptyText = emptyState ? emptyState.querySelector("p") : null;
   var modal = document.getElementById("event-modal");
   var pastList = document.getElementById("past-events");
   var state = { category: "All" };
@@ -70,10 +72,20 @@
 
     grid.hidden = upcoming.length === 0;
     if (emptyState) emptyState.hidden = upcoming.length !== 0;
+    if (emptyTitle && emptyText) {
+      var hasUpcoming = data.some(function (event) {
+        return !event.past;
+      });
+      emptyTitle.textContent = hasUpcoming ? "No events in this category" : "No upcoming events";
+      emptyText.textContent = hasUpcoming
+        ? "Try another category, or check back when new events are published."
+        : "New events will appear here once the school office publishes them.";
+    }
     if (countNode) {
-      countNode.textContent =
-        "Showing " + upcoming.length + " example " + (upcoming.length === 1 ? "event" : "events") +
-        (state.category === "All" ? "" : " in " + state.category);
+      var scope = state.category === "All" ? "" : " in " + state.category;
+      countNode.textContent = upcoming.length
+        ? "Showing " + upcoming.length + " upcoming " + (upcoming.length === 1 ? "event" : "events") + scope
+        : "No upcoming events" + scope;
     }
 
     grid.querySelectorAll(".js-event-open").forEach(function (button) {
@@ -111,7 +123,9 @@
             return "<p>" + escape(paragraph) + "</p>";
           })
           .join("") +
-        '<p class="muted">This demonstration record is not an official school announcement.</p>';
+        (event.isSample
+          ? '<p class="muted">This demonstration record is not an official school announcement.</p>'
+          : "");
     }
 
     window.PTM.openDialog(modal);
@@ -140,24 +154,28 @@
   }
 
   if (pastList) {
-    var escape = window.PTM.escapeHTML;
-    pastList.innerHTML = data
+    var escapePast = window.PTM.escapeHTML;
+    var pastEvents = data
       .filter(function (event) {
         return event.past;
       })
       .sort(function (a, b) {
         return parseDate(b.date) - parseDate(a.date);
-      })
-      .map(function (event) {
-        return (
-          "<li>" +
-          '<span class="calendar-list__date">' + escape(window.PTM.formatDate(event.date)) + "</span>" +
-          "<span>" + escape(event.title) + "</span>" +
-          '<span class="tag tag--sample">Sample</span>' +
-          "</li>"
-        );
-      })
-      .join("");
+      });
+
+    pastList.innerHTML = pastEvents.length
+      ? pastEvents.map(function (event) {
+          return (
+            "<li>" +
+            '<span class="calendar-list__date">' + escapePast(window.PTM.formatDate(event.date)) + "</span>" +
+            "<span>" + escapePast(event.title) + "</span>" +
+            (event.isSample
+              ? '<span class="tag tag--sample">Sample</span>'
+              : '<span class="tag">' + escapePast(event.category) + "</span>") +
+            "</li>"
+          );
+        }).join("")
+      : '<li><span class="muted">No past events are listed.</span></li>';
   }
 
   render();

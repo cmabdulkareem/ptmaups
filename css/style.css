@@ -1337,6 +1337,24 @@ table {
   background: var(--navy);
 }
 
+/* CMS-managed content visibility */
+
+html:not(.cms-active) [data-cms-only] {
+  display: none !important;
+}
+
+html.cms-active [data-cms-demo] {
+  display: none !important;
+}
+
+.list-empty {
+  margin: 0;
+  padding: 1.1rem 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News &amp; Events | Panakkad Thangal Memorial AUP School, Bedira</title>
-  <meta name="description" content="School news and events at Panakkad Thangal Memorial AUP School, Bedira. Demonstration listings show how official announcements and events will appear.">
+  <meta name="description" content="School news and events at Panakkad Thangal Memorial AUP School, Bedira, with category filters, event details and an archive of past events.">
   <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,18 +121,23 @@
           <div>
             <p class="eyebrow eyebrow--light">News and events</p>
             <h1>School news, gathered in one place</h1>
-            <p class="page-hero__lead">Announcements, academic notices, cultural programmes and school celebrations will be published here as official information becomes available.</p>
+            <p class="page-hero__lead">Announcements, academic notices, cultural programmes and school celebrations, gathered from the school office.</p>
           </div>
-          <aside class="page-hero__aside" aria-label="Listing status">
+          <aside class="page-hero__aside" data-cms-demo aria-label="Listing status">
             <p class="page-hero__aside-label">Current listings</p>
             <p class="page-hero__aside-value">Demonstration content</p>
             <small>Official events will replace these samples</small>
+          </aside>
+          <aside class="page-hero__aside" data-cms-only aria-label="Listing status">
+            <p class="page-hero__aside-label">Event listings</p>
+            <p class="page-hero__aside-value">School office updates</p>
+            <small>Upcoming events appear first</small>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" data-cms-demo>
       <div class="container">
         <p class="note">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5.5M12 7.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -166,7 +171,7 @@
         <div class="empty-state" id="event-empty" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 3v4M16 3v4M3 10h18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           <h3>No events in this category</h3>
-          <p>Try another category. Official event records will appear here once the school publishes them.</p>
+          <p>Try another category, or check back when new events are published.</p>
         </div>
       </div>
     </section>
@@ -177,7 +182,7 @@
           <div class="section-head__intro">
             <p class="eyebrow">Past events</p>
             <h2>From the archive</h2>
-            <p>Past events will be kept here for reference. The entries below are demonstration samples only.</p>
+            <p>Past events are kept here for reference.</p>
           </div>
         </div>
         <ul class="calendar-list__items" id="past-events"></ul>
@@ -205,7 +210,7 @@
         </div>
         <p class="note section-foot">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5.5M12 7.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>For official notice-board content, visit the <a href="notices.html">school notices page</a>. The <a href="school-calendar.html">academic calendar</a> also shows sample entries.</span>
+          <span>For school notice-board content, visit the <a href="notices.html">school notices page</a>. The <a href="school-calendar.html">academic calendar</a> lists school dates.</span>
         </p>
       </div>
     </section>
@@ -289,6 +294,7 @@
   </button>
 
   <script src="js/school-data.js"></script>
+  <script src="js/cms-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/events.js"></script>
 </body>

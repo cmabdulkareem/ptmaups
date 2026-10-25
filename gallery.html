@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>School Memories | Panakkad Thangal Memorial AUP School, Bedira</title>
-  <meta name="description" content="Explore a demonstration chronological gallery of school life at Panakkad Thangal Memorial AUP School, Bedira. Photographs are paired with sample captions and dates.">
+  <meta name="description" content="Explore the chronological school gallery of Panakkad Thangal Memorial AUP School, Bedira, with photographs arranged by year and occasion.">
   <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,12 +121,17 @@
           <div>
             <p class="eyebrow eyebrow--light">Memories timeline</p>
             <h1>School memories, through the years</h1>
-            <p class="page-hero__lead">A chronological preview of school life at Bedira, arranged by year and occasion. This demonstration pairs school photographs with sample captions and dates; confirm details with school records before publication.</p>
+            <p class="page-hero__lead">A chronological view of school life at Bedira, arranged by year and occasion. Collections appear here with the photographs and captions shared by the school.</p>
           </div>
-          <aside class="page-hero__aside" aria-label="Gallery archive status">
+          <aside class="page-hero__aside" aria-label="Gallery archive status" data-cms-demo>
             <p class="page-hero__aside-label">Archive status</p>
             <p class="page-hero__aside-value">Demonstration preview</p>
             <small>Draft captions and dates — verify before publication</small>
+          </aside>
+          <aside class="page-hero__aside" aria-label="Gallery archive status" data-cms-only>
+            <p class="page-hero__aside-label">School archive</p>
+            <p class="page-hero__aside-value">Photographs and memories</p>
+            <small>Collections published by the school office</small>
           </aside>
         </div>
       </div>
@@ -141,13 +146,14 @@
             <p>Memories are arranged from the earliest year to the latest, with each entry gathering related photographs and their story. Select a collection to look through in full.</p>
           </div>
           <div class="memory-summary" aria-live="polite">
-            <span class="memory-summary__label">Preview contents</span>
+            <span class="memory-summary__label" data-cms-demo>Preview contents</span>
+            <span class="memory-summary__label" data-cms-only>Archive contents</span>
             <strong id="memory-summary-value">Awaiting photographs</strong>
             <span id="memory-summary-detail">New memories will be added here</span>
           </div>
         </div>
 
-        <div class="memory-demo-note" role="note">
+        <div class="memory-demo-note" role="note" data-cms-demo>
           <span class="memory-demo-note__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8v5M12 16.5v.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </span>
@@ -225,7 +231,7 @@
       <div class="container">
         <div class="section-head">
           <div class="section-head__intro">
-            <p class="eyebrow">Before publication</p>
+            <p class="eyebrow">Archive standards</p>
             <h2 id="archive-notes-title">A careful school archive</h2>
             <p>School photographs are part of a child's educational record and must be shared responsibly.</p>
           </div>
@@ -236,7 +242,7 @@
               <svg viewBox="0 0 24 24"><path d="M4 7h4l2-2h4l2 2h4v12H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
             <h3>Official images only</h3>
-            <p class="muted">This preview pairs supplied photographs with draft captions. The published archive will show only photographs approved by the school, with consent recorded; unrelated stock images will not be used.</p>
+            <p class="muted"><span data-cms-demo>This preview pairs supplied photographs with draft captions. The published archive will show only photographs approved by the school, with consent recorded.</span><span data-cms-only>The archive shows only photographs approved by the school, with consent recorded.</span> Unrelated stock images are not used.</p>
           </article>
           <article class="panel panel--paper">
             <span class="icon-box icon-box--gold" aria-hidden="true">
@@ -250,7 +256,7 @@
               <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 12h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </span>
             <h3>Accurate captions</h3>
-            <p class="muted">Every photograph will carry a clear caption, date and accessible description so the archive remains useful and inclusive.</p>
+            <p class="muted">Every photograph carries a clear caption, date and accessible description so the archive remains useful and inclusive.</p>
           </article>
         </div>
       </div>
@@ -377,8 +383,9 @@
   </button>
 
   <script src="js/school-data.js"></script>
-  <script src="js/main.js"></script>
   <script src="js/gallery-data.js"></script>
+  <script src="js/cms-data.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/gallery.js"></script>
 </body>
 </html>

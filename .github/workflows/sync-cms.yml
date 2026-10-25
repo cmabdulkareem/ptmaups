@@ -1,0 +1,73 @@
+name: Sync school content from WordPress
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "cms/cms.config.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-school-cms
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Check CMS configuration
+        id: config
+        run: |
+          set +e
+          node scripts/sync-cms.mjs --check
+          status=$?
+          set -e
+          if [ "$status" -eq 3 ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "The WordPress content source is not configured yet. Skipping this run."
+            exit 0
+          fi
+          if [ "$status" -ne 0 ]; then
+            exit "$status"
+          fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        if: steps.config.outputs.configured == 'true'
+        run: npm ci
+
+      - name: Pull content and photographs
+        if: steps.config.outputs.configured == 'true'
+        run: npm run cms:sync
+
+      - name: Commit published changes
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- js/cms-data.js cms/.state
+          if [ -d assets/uploads/gallery ]; then
+            git add -A -- assets/uploads/gallery
+          fi
+          if git diff --cached --quiet; then
+            echo "No school content has changed."
+            exit 0
+          fi
+          git commit -m "chore: sync school content from WordPress"
+          git pull --rebase origin master
+          git push

@@ -1,0 +1,19 @@
+{
+  "name": "ptmaup-school-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static website for Panakkad Thangal Memorial AUP School, Bedira",
+  "scripts": {
+    "cms:check": "node scripts/sync-cms.mjs --check",
+    "cms:sync": "node scripts/sync-cms.mjs",
+    "cms:fixtures": "node scripts/sync-cms.mjs --fixtures cms/fixtures",
+    "test": "node --test scripts/cms.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  }
+}

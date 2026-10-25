@@ -12,6 +12,8 @@
   var filterGroup = document.getElementById("notice-filters");
   var countNode = document.getElementById("notice-count");
   var emptyState = document.getElementById("notice-empty");
+  var emptyTitle = emptyState ? emptyState.querySelector("h3") : null;
+  var emptyText = emptyState ? emptyState.querySelector("p") : null;
 
   var state = {
     query: "",
@@ -115,6 +117,14 @@
     list.innerHTML = fragment;
     list.hidden = filtered.length === 0;
     if (emptyState) emptyState.hidden = filtered.length !== 0;
+    if (emptyTitle) {
+      emptyTitle.textContent = data.length ? "No notices found" : "No notices published yet";
+    }
+    if (emptyText) {
+      emptyText.textContent = data.length
+        ? "No notice matches your search or filter. Try a different keyword or choose another category."
+        : "Official notices will appear here once the school office publishes them.";
+    }
 
     if (countNode) {
       countNode.textContent = "Showing " + filtered.length + " of " + data.length + " notices";

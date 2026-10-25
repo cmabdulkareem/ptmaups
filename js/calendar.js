@@ -7,6 +7,10 @@
   var grid = document.getElementById("calendar-grid");
   if (!data || !grid || !window.PTM) return;
 
+  var hasSampleEntries = data.some(function (entry) {
+    return entry.isSample === true;
+  });
+
   var monthNode = document.getElementById("calendar-month");
   var selectedLabel = document.getElementById("calendar-selected-label");
   var detailBody = document.getElementById("calendar-day-events");
@@ -88,14 +92,20 @@
         month: "long",
         year: "numeric"
       });
+      var sampleDay = dayEvents.length > 0 && dayEvents.every(function (entry) {
+        return entry.isSample === true;
+      });
       if (dayEvents.length) {
-        label += ", " + dayEvents.length + " sample " + (dayEvents.length === 1 ? "entry" : "entries");
+        label += ", " + dayEvents.length + (sampleDay ? " sample " : " calendar ") +
+          (dayEvents.length === 1 ? "entry" : "entries");
       }
 
       var dots = dayEvents
         .slice(0, 3)
         .map(function () {
-          return '<span class="calendar__dot calendar__dot--sample"></span>';
+          return sampleDay
+            ? '<span class="calendar__dot calendar__dot--sample"></span>'
+            : '<span class="calendar__dot"></span>';
         })
         .join("");
 
@@ -141,8 +151,10 @@
 
     if (!events.length) {
       detailBody.innerHTML =
-        '<p>No events scheduled for this date.</p>' +
-        '<p class="muted">This calendar currently shows demonstration entries only. Official holidays and academic dates will be published by the school.</p>';
+        "<p>No entries are scheduled for this date.</p>" +
+        (hasSampleEntries
+          ? '<p class="muted">This calendar currently includes demonstration entries. Official dates will be published by the school.</p>'
+          : "");
       return;
     }
 
@@ -150,9 +162,12 @@
       .map(function (event) {
         return (
           '<div class="calendar-event">' +
-          '<span class="tag tag--sample">Sample</span>' +
+          '<div class="calendar-event__meta">' +
+          (event.category ? '<span class="tag">' + escape(event.category) + "</span>" : "") +
+          (event.isSample ? '<span class="tag tag--sample">Sample</span>' : "") +
+          "</div>" +
           "<h3>" + escape(event.title) + "</h3>" +
-          "<p>" + escape(event.description) + "</p>" +
+          (event.description ? "<p>" + escape(event.description) + "</p>" : "") +
           "</div>"
         );
       })
@@ -166,7 +181,9 @@
 
     if (!events.length) {
       listNode.innerHTML =
-        '<li><span class="muted">No events are listed for this month. Demonstration entries are available in other months.</span></li>';
+        "<li><span class=\"muted\">No entries are listed for this month." +
+        (hasSampleEntries ? " Sample entries are available in other months." : "") +
+        "</span></li>";
       return;
     }
 
@@ -176,7 +193,9 @@
           "<li>" +
           '<span class="calendar-list__date">' + escape(window.PTM.formatDate(event.date)) + "</span>" +
           "<span>" + escape(event.title) + "</span>" +
-          '<span class="tag tag--sample">Sample</span>' +
+          (event.isSample
+            ? '<span class="tag tag--sample">Sample</span>'
+            : '<span class="tag">' + escape(event.category) + "</span>") +
           "</li>"
         );
       })

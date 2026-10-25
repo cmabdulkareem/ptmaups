@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Academic Calendar | Panakkad Thangal Memorial AUP School, Bedira</title>
-  <meta name="description" content="Monthly academic calendar for Panakkad Thangal Memorial AUP School, Bedira. Sample entries only; official dates will be published by the school.">
+  <meta name="description" content="Monthly academic calendar for Panakkad Thangal Memorial AUP School, Bedira. Academic dates, holidays and school events are published as they are confirmed by the school.">
   <link rel="icon" type="image/png" href="assets/images/school-emblem.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,18 +121,23 @@
           <div>
             <p class="eyebrow eyebrow--light">Academic calendar</p>
             <h1>Planning the school year</h1>
-            <p class="page-hero__lead">A monthly view of academic dates, holidays and school events. The calendar currently contains clearly labelled sample entries only.</p>
+            <p class="page-hero__lead">A monthly view of academic dates, holidays and school events published by the school office.</p>
           </div>
-          <aside class="page-hero__aside" aria-label="Calendar status">
+          <aside class="page-hero__aside" aria-label="Calendar status" data-cms-demo>
             <p class="page-hero__aside-label">Official dates</p>
             <p class="page-hero__aside-value">Awaiting publication</p>
             <small>Sample entries are marked on the calendar</small>
+          </aside>
+          <aside class="page-hero__aside" aria-label="Calendar status" data-cms-only>
+            <p class="page-hero__aside-label">School calendar</p>
+            <p class="page-hero__aside-value">Published dates</p>
+            <small>Entries are added by the school office</small>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight">
+    <section class="section section--tight" data-cms-demo>
       <div class="container">
         <p class="note note--warn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 21h20L12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9v5M12 17.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -169,8 +174,9 @@
               <div class="calendar__grid" id="calendar-grid" role="group" aria-label="Days of the month"></div>
 
               <div class="calendar__legend">
-                <span><i></i> Official entry</span>
-                <span><i class="sample"></i> Sample entry</span>
+                <span data-cms-only><i></i> School calendar entry</span>
+                <span data-cms-demo><i></i> Official entry</span>
+                <span data-cms-demo><i class="sample"></i> Sample entry</span>
               </div>
             </div>
           </div>
@@ -196,8 +202,8 @@
         <div class="section-head">
           <div class="section-head__intro">
             <p class="eyebrow">How this calendar works</p>
-            <h2>Designed for official updates</h2>
-            <p>The calendar is built to display the school's confirmed academic dates once they are supplied. Until then, it demonstrates the layout with sample entries.</p>
+            <h2>A clear view of the school year</h2>
+            <p>The calendar displays the school's confirmed academic dates, holidays and events. Entries are published here as they are confirmed by the school office.</p>
           </div>
         </div>
         <div class="grid-3">
@@ -219,8 +225,8 @@
             <span class="icon-box icon-box--gold" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 19V7l8-3 8 3v12M4 19h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 19v-5h8v5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
-            <h3>Sample marking</h3>
-            <p class="muted">Sample entries are labelled as such in the date details and month list. Official entries will replace them.</p>
+            <h3>Category labels</h3>
+            <p class="muted">Entries are labelled by category in the date details and the month list, so the type of each date is clear at a glance.</p>
           </article>
         </div>
       </div>
@@ -229,16 +235,16 @@
     <section class="section">
       <div class="container split">
         <div>
-          <p class="eyebrow">Official dates</p>
-          <h2>When will the calendar be confirmed?</h2>
-          <p>The school's official academic calendar, holiday list and examination schedule will be added when supplied. Notices will also be published on the notice board as they are confirmed.</p>
+          <p class="eyebrow">Calendar updates</p>
+          <h2>Keeping up with school dates</h2>
+          <p>Academic dates, holidays and examination schedules are published here as they are confirmed. Notices about calendar changes are also published on the notice board.</p>
           <p><a class="link-arrow" href="notices.html">Read school notices
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a></p>
         </div>
         <div class="panel panel--accent">
           <h3>Contact the school office</h3>
-          <p class="muted">For confirmed dates and holiday information, contact the school office. Telephone numbers, email addresses and office hours are still awaiting confirmation on this website.</p>
+          <p class="muted">For confirmed dates and holiday information, contact the school office. Telephone numbers, email addresses and office hours are awaiting confirmation on this website.</p>
           <p><span class="tbc">Official contact details to be confirmed</span></p>
           <p><a class="btn btn--outline-teal btn--sm" href="contact.html">Go to Contact Us</a></p>
         </div>
@@ -305,6 +311,7 @@
   </button>
 
   <script src="js/school-data.js"></script>
+  <script src="js/cms-data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/calendar.js"></script>
 </body>

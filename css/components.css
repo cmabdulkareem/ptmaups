@@ -663,6 +663,17 @@
   margin-bottom: 0.35rem;
 }
 
+.event-mini__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.event-mini__meta .tag {
+  margin-bottom: 0.35rem;
+}
+
 /* ---------- Principal message ---------- */
 
 .principal {
@@ -1786,6 +1797,7 @@ body.modal-open {
 .memory-card__media {
   position: relative;
   display: block;
+  width: calc(100% - var(--memory-inset) - var(--memory-inset));
   margin: 0 var(--memory-inset) 0.9rem;
   padding: 0;
   border: 0;
@@ -3598,6 +3610,17 @@ body.modal-open {
 
 .calendar-event .tag {
   margin-bottom: 0.35rem;
+}
+
+.calendar-event__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.calendar-event__meta .tag {
+  margin-bottom: 0;
 }
 
 .calendar-event h3 {

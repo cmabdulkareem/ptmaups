@@ -1,0 +1,165 @@
+.ptmaup-fields {
+    max-width: 760px;
+}
+
+.ptmaup-fields__row {
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.ptmaup-field {
+    margin: 0 0 18px;
+}
+
+.ptmaup-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ptmaup-field input[type="date"],
+.ptmaup-field input[type="number"],
+.ptmaup-field input[type="text"],
+.ptmaup-field select,
+.ptmaup-field textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.ptmaup-field textarea {
+    min-height: 70px;
+}
+
+.ptmaup-field .description,
+.ptmaup-consent .description {
+    display: block;
+    margin-top: 5px;
+}
+
+.ptmaup-photos__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0;
+}
+
+.ptmaup-photo-list {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ptmaup-photo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.ptmaup-photo-empty {
+    margin: 0;
+    padding: 18px;
+    border: 1px dashed #c3c4c7;
+    border-radius: 4px;
+    color: #646970;
+    text-align: center;
+}
+
+.ptmaup-photo-handle {
+    color: #8c8f94;
+    cursor: grab;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.ptmaup-photo-thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #f0f0f1;
+}
+
+.ptmaup-photo-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ptmaup-photo-info {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    min-width: 0;
+}
+
+.ptmaup-photo-info strong {
+    flex: 1 0 100%;
+    overflow-wrap: anywhere;
+}
+
+.ptmaup-photo-edit {
+    font-size: 12px;
+}
+
+.ptmaup-photo-remove {
+    flex: 0 0 auto;
+    color: #b32d2e !important;
+}
+
+.ptmaup-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: normal;
+}
+
+.ptmaup-badge--ok {
+    background: #edfaef;
+    color: #146c2e;
+}
+
+.ptmaup-badge--warning {
+    background: #fcf0f1;
+    color: #8a2424;
+}
+
+.ptmaup-consent p {
+    margin-top: 0;
+}
+
+.ptmaup-consent input[type="text"] {
+    margin-top: 4px;
+}
+
+.ptmaup-consent__status {
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f1;
+}
+
+@media (max-width: 782px) {
+    .ptmaup-fields__row {
+        grid-template-columns: 1fr;
+    }
+
+    .ptmaup-photo {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .ptmaup-photo-remove {
+        margin-left: auto;
+    }
+}

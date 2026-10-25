@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "pluginVersion": "1.0.0",
+  "generatedAt": "2026-10-25T06:00:00+00:00",
+  "announcement": {
+    "message": "CMS preview: updates from WordPress appear here.",
+    "updated": "2026-10-24"
+  },
+  "notices": [
+    {
+      "id": "cms-preview-welcome",
+      "date": "2026-10-20",
+      "category": "General",
+      "title": "Website preview: a notice from WordPress",
+      "excerpt": "This entry demonstrates how a published notice appears on the public website.",
+      "body": [
+        "This is fixture content used to preview the website sync. It is not an official school notice.",
+        "When the website is connected to WordPress, approved notices published by the school replace this entry."
+      ]
+    },
+    {
+      "id": "cms-preview-library",
+      "date": "2026-10-12",
+      "category": "Academic",
+      "title": "Website preview: a second notice",
+      "excerpt": "A second entry shows how several notices are ordered by their website date.",
+      "body": [
+        "The newest notice appears first. The date shown here is the date entered in WordPress, not the date the page was built.",
+        "Fixture content exists only for previewing the site before launch."
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "cms-preview-event-upcoming",
+      "date": "2026-11-14",
+      "category": "Events",
+      "title": "Website preview: an upcoming event",
+      "excerpt": "This fixture entry demonstrates the upcoming state on the events page.",
+      "body": [
+        "Events dated after today are grouped as upcoming. This fixture date is intentionally in the future.",
+        "Replace this preview with approved school content before launch."
+      ]
+    },
+    {
+      "id": "cms-preview-event-past",
+      "date": "2024-12-06",
+      "category": "Activities",
+      "title": "Website preview: a past event",
+      "excerpt": "This fixture entry demonstrates how an earlier event is grouped in the archive.",
+      "body": [
+        "The website derives the past state from the event date in Indian Standard Time.",
+        "This is preview content, not a record of an actual school event."
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "cms-preview-calendar-entry",
+      "date": "2026-11-02",
+      "category": "Academic",
+      "title": "Website preview: a calendar entry",
+      "description": "A fixture calendar entry showing how a dated item appears in the school calendar."
+    }
+  ],
+  "galleries": [
+    {
+      "id": "cms-preview-photographs",
+      "date": "2025",
+      "year": 2025,
+      "title": "Website preview: photographs from WordPress",
+      "description": "Two approved photographs demonstrate how a gallery collection is downloaded, optimised and published.",
+      "notes": [
+        "Photographs appear only when consent, a consent reference and alternative text are recorded.",
+        "This collection is fixture content for previewing the site."
+      ],
+      "withheldPhotos": 0,
+      "photos": [
+        {
+          "id": "cms-preview-photo-01",
+          "url": "assets/images/gallery/reading-room.jpg",
+          "alt": "A large group of students in white and blue uniforms gathered in a circle around a playground slide on a red-earth school ground, with a teacher standing on the slide.",
+          "caption": "Morning assembly on the school ground.",
+          "consentRecorded": true,
+          "modified": "2026-10-20T09:00:00+00:00"
+        },
+        {
+          "id": "cms-preview-photo-02",
+          "url": "assets/images/gallery/art-paints.jpg",
+          "alt": "Two students in gold-trimmed traditional dance costumes with flowers in their hair, smiling at each other outdoors.",
+          "caption": "Two students dressed for a performance.",
+          "consentRecorded": true,
+          "modified": "2026-10-20T09:00:00+00:00"
+        }
+      ]
+    },
+    {
+      "id": "cms-preview-empty",
+      "date": "2024",
+      "year": 2024,
+      "title": "A collection awaiting photographs",
+      "description": "A fixture entry reserved for photographs that are still being catalogued. No photographs are attached yet.",
+      "notes": [
+        "Prints are still being catalogued and matched to their dates.",
+        "No photographs are attached until the details can be confirmed."
+      ],
+      "withheldPhotos": 0,
+      "photos": []
+    }
+  ]
+}
