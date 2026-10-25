@@ -121,7 +121,7 @@ Edit `cms/cms.config.json`:
 - `contentPath` — the plugin feed path. Change it for a subdirectory installation.
 - `allowedMediaHosts` — only needed when published images are served from a different host, such as a media CDN. List hostnames only, for example `["cdn.example.org"]`. The WordPress host is always allowed.
 
-Commit and push the change. The workflow also runs whenever this config file changes. For a local test, the environment variable `CMS_WORDPRESS_URL` overrides `wordpressUrl`:
+Commit and push the change. The workflow also runs whenever this config file changes. For a local test, the environment variable `CMS_WORDPRESS_URL` overrides `wordpressUrl`: 
 
 ```bash
 CMS_WORDPRESS_URL=https://updates.example.org npm run cms:check
