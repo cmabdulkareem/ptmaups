@@ -192,13 +192,24 @@ Use `http://127.0.0.1` or `http://localhost` for a local WordPress address; all 
 | --- | --- |
 | Action says "not configured" | `wordpressUrl` in `cms/cms.config.json` is empty, or the change is not on `master`. |
 | Feed returns 404 | Plugin is active; Permalinks is set to **Post name**; `wordpressUrl` and `contentPath` are correct; for a subdirectory install set the full path. |
-| Feed returns an HTML page | The site is in maintenance mode, a security plugin/firewall blocks REST, or the address points to the static website rather than WordPress. |
+| Feed returns an HTML page | The site is in maintenance mode, a security plugin/firewall blocks REST, or the address points to the static website rather than WordPress. If the page is a JavaScript “checking your browser” challenge (common on free hosting), see the cookie workaround below. |
 | `schema` mismatch | Update the plugin and the website together; the feed and sync must use schema 1. |
 | Photographs are missing | Consent, consent reference and alternative text must all be recorded; the image must be selected in the gallery and saved; check `allowedMediaHosts` if images use a CDN. |
 | Image download fails | WordPress media files must be publicly accessible over HTTPS; check hotlink protection, CDN rules and file size limits. |
 | Website still shows demonstration content | Run the workflow manually, check the Action log and the commit, confirm GitHub Pages deployed, then hard-refresh. |
 | A removed photograph is still visible | The current site may be cached; also remember that GitHub history retains earlier commits. For a consent withdrawal, remove the image, run the sync, and ask the maintainer to purge the file from repository history and any CDN cache. |
 | Site design changes are expected from WordPress | The design is in this repository; WordPress only supplies School Updates content. |
+
+### Hosts with a JavaScript “visitor check” (cookie workaround)
+
+Some free hosts (for example byethost) answer automated requests with a JavaScript “checking your browser” page, so the sync sees HTML instead of the feed even though the site works in your browser. The sync can replay the verification cookie that your browser receives:
+
+1. Open the WordPress site in your browser and let the check pass (the site loads normally).
+2. Open DevTools (F12) → **Application** → **Cookies** → select the WordPress address. Copy every cookie shown there in `name=value; name=value` form. (The Console command `document.cookie` does not show HttpOnly cookies, so use the Application tab.)
+3. In the GitHub repository go to **Settings → Secrets and variables → Actions → New repository secret**. Name it exactly `CMS_WORDPRESS_COOKIE` and paste the cookie string.
+4. Re-run the workflow: **Actions → Sync school content from WordPress → Run workflow**.
+
+The cookie is sent only to the configured WordPress host, never to other media hosts, and it is read from the secret — never commit it to `cms/cms.config.json`. Verification cookies expire; when the sync fails again with “returned a web page instead of the content feed”, repeat steps 1–3 with a fresh cookie. This workaround fights the host's bot protection and can stop working at any time; moving to hosting that serves `/wp-json/` without a challenge is the reliable fix.
 
 ## Security and privacy
 

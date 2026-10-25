@@ -474,6 +474,28 @@ function isLoopbackHost(hostname) {
   );
 }
 
+// Hosts such as free byethost answer automated requests with a JavaScript
+// "visitor check" page. A browser passes it by storing a verification cookie,
+// which we replay from the CMS_WORDPRESS_COOKIE secret — only ever to the
+// configured WordPress host, never to other media hosts.
+function wordpressCookieHeaders(config, requestUrl, headers) {
+  const merged = { ...headers };
+  const cookie = String(process.env.CMS_WORDPRESS_COOKIE || "").trim();
+  if (!cookie || !config || !config.wordpressUrl) {
+    return merged;
+  }
+  try {
+    const requestHost = new URL(requestUrl).hostname.toLowerCase();
+    const siteHost = new URL(config.wordpressUrl).hostname.toLowerCase();
+    if (requestHost === siteHost) {
+      merged.cookie = cookie;
+    }
+  } catch (error) {
+    return merged;
+  }
+  return merged;
+}
+
 function parseMediaSource(raw, options) {
   const value = String(raw ?? "").trim();
   if (!value) return { error: "the photograph has no file address" };
@@ -1029,7 +1051,10 @@ export async function fetchFeed(config) {
   let response;
   try {
     response = await fetch(endpoint, {
-      headers: { "user-agent": USER_AGENT, accept: "application/json" },
+      headers: wordpressCookieHeaders(config, endpoint, {
+        "user-agent": USER_AGENT,
+        accept: "application/json"
+      }),
       redirect: "follow",
       signal: AbortSignal.timeout(45_000),
       cache: "no-store"
@@ -1061,6 +1086,7 @@ export async function fetchFeed(config) {
     throw new CmsError(
       "WordPress returned a web page instead of the content feed at " + endpoint + "." +
         feedFailureHint(404) +
+        " If the site shows a visitor-verification page, update the CMS_WORDPRESS_COOKIE secret." +
         " If the site is in maintenance mode, disable it and run the sync again."
     );
   }
@@ -1132,7 +1158,10 @@ async function downloadImage(photo, ctx) {
   let response;
   try {
     response = await fetch(photo.url, {
-      headers: { "user-agent": USER_AGENT, accept: "image/*" },
+      headers: wordpressCookieHeaders(ctx, photo.url, {
+        "user-agent": USER_AGENT,
+        accept: "image/*"
+      }),
       redirect: "follow",
       signal: AbortSignal.timeout(60_000)
     });
@@ -1173,7 +1202,8 @@ async function downloadImage(photo, ctx) {
     await response.body?.cancel().catch(() => {});
     throw new CmsError(
       photo.label + ': photograph "' + photo.id +
-        '" returned a web page instead of an image. Check that the media file is publicly accessible.'
+        '" returned a web page instead of an image. Check that the media file is publicly accessible.' +
+        " If the host checks visitors with JavaScript, update the CMS_WORDPRESS_COOKIE secret."
     );
   }
   if (contentType && !contentType.startsWith("image/")) {
@@ -1419,6 +1449,7 @@ export async function runSync(options) {
 
   const ctx = {
     fixtures: Boolean(fixturesDir),
+    wordpressUrl: config.wordpressUrl,
     allowedHosts,
     imageBytes: LIMITS.imageBytes,
     imageTotalBytes: LIMITS.imageTotalBytes,

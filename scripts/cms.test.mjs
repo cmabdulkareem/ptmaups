@@ -612,6 +612,62 @@ test("the sync reads a live HTTP WordPress feed", async (t) => {
   );
 });
 
+test("the sync replays CMS_WORDPRESS_COOKIE to the WordPress host", async (t) => {
+  const feed = validPayload();
+  feed.galleries = [];
+  let seenCookie = null;
+
+  // Mimics a host with a JavaScript visitor check: no valid cookie, no feed.
+  const server = http.createServer((request, response) => {
+    if (request.url === "/wp-json/ptmaup/v1/content") {
+      seenCookie = request.headers.cookie || null;
+      if (seenCookie !== "test-cookie=ok") {
+        response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+        response.end("<!doctype html><title>Checking your browser</title>");
+        return;
+      }
+      response.writeHead(200, { "content-type": "application/json; charset=utf-8" });
+      response.end(JSON.stringify(feed));
+      return;
+    }
+    response.writeHead(404, { "content-type": "text/html; charset=utf-8" });
+    response.end("<!doctype html><title>Not found</title>");
+  });
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  t.after(async () => {
+    server.close();
+    delete process.env.CMS_WORDPRESS_COOKIE;
+  });
+
+  const port = server.address().port;
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "ptmaup-cms-cookie-"));
+  t.after(async () => {
+    await fs.rm(dir, { recursive: true, force: true });
+  });
+
+  const configFile = path.join(dir, "cms.config.json");
+  await fs.writeFile(
+    configFile,
+    JSON.stringify({
+      wordpressUrl: "http://127.0.0.1:" + port,
+      contentPath: "/wp-json/ptmaup/v1/content",
+      allowedMediaHosts: []
+    })
+  );
+  const out = path.join(dir, "site");
+
+  delete process.env.CMS_WORDPRESS_COOKIE;
+  await assert.rejects(
+    runSync({ config: configFile, out }),
+    /returned a web page instead of the content feed/
+  );
+
+  process.env.CMS_WORDPRESS_COOKIE = "test-cookie=ok";
+  seenCookie = null;
+  await runSync({ config: configFile, out });
+  assert.equal(seenCookie, "test-cookie=ok");
+});
+
 test("CmsError instances identify CMS failures", () => {
   assert.throws(() => {
     throw new CmsError("Example failure");

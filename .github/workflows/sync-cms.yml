@@ -53,6 +53,10 @@ jobs:
 
       - name: Pull content and photographs
         if: steps.config.outputs.configured == 'true'
+        env:
+          # Optional: visitor-verification cookie for hosts that check browsers
+          # with JavaScript (for example free byethost). See cms/README.md.
+          CMS_WORDPRESS_COOKIE: ${{ secrets.CMS_WORDPRESS_COOKIE }}
         run: npm run cms:sync
 
       - name: Commit published changes
