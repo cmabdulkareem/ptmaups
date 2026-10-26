@@ -27,7 +27,7 @@
     school: {
       name: "Panakkad Thangal Memorial AUP School, Bedira",
       shortName: "AUP School, Bedira",
-      location: "Bedira, Kasaragod, Kerala, India",
+      location: "Bedira-Chala, Kasaragod, Kerala, India",
       established: 1976,
       motto: "Educating for Life."
     },
@@ -259,7 +259,7 @@
       },
       {
         question: "How can I contact the school?",
-        answer: "The school is located in Bedira, Kasaragod, Kerala. The full postal address, telephone number, official email address and office hours are awaiting confirmation and will be added to the contact page once approved."
+        answer: "The school is located in Bedira, Chala, Kasaragod, Kerala. The full postal address, telephone number, official email address and office hours are awaiting confirmation and will be added to the contact page once approved."
       }
     ]
   };

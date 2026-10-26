@@ -187,6 +187,12 @@ table {
   scroll-margin-top: 110px;
 }
 
+/* The principal link targets the heading, not the section box, so the
+   heading clears the sticky nav instead of landing after section padding. */
+#principal {
+  scroll-margin-top: 64px;
+}
+
 /* ---------- Utilities ---------- */
 
 .container {
@@ -918,6 +924,45 @@ table {
   padding-block: clamp(2.75rem, 5.5vw, 4.75rem);
   background: var(--navy);
   color: rgba(255, 255, 255, 0.75);
+}
+
+/* Gallery hero: same full-bleed image treatment as the home hero. */
+
+.page-hero--image {
+  isolation: isolate;
+}
+
+.page-hero--image::before,
+.page-hero--image::after {
+  display: none;
+}
+
+.page-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--navy);
+}
+
+.page-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.page-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(4, 43, 55, 0.97) 0%, rgba(4, 43, 55, 0.94) 40%, rgba(4, 43, 55, 0.8) 60%, rgba(4, 43, 55, 0.4) 80%, rgba(4, 43, 55, 0.16) 100%),
+    linear-gradient(180deg, rgba(4, 43, 55, 0.25) 0%, rgba(4, 43, 55, 0) 38%, rgba(4, 43, 55, 0.55) 100%);
+}
+
+.page-hero--image .page-hero__aside {
+  background: rgba(4, 43, 55, 0.55);
+  backdrop-filter: blur(3px);
 }
 
 .page-hero::before {

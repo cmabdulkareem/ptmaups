@@ -724,6 +724,43 @@
   color: var(--white);
 }
 
+.principal__portrait {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1.5rem;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.principal__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.principal__credentials {
+  margin-top: 0.85rem !important;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.86rem !important;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.principal__credentials span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
 .principal__body {
   padding: clamp(1.8rem, 3.5vw, 3rem);
   background: var(--white);
