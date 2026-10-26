@@ -430,4 +430,89 @@
       });
     });
   });
+  /* ---------- Scroll reveal ---------- */
+
+  var motionSelector = [
+    ".section-head",
+    ".quick-card",
+    ".info-tile",
+    ".subject-card",
+    ".facility-card",
+    ".activity-card",
+    ".life-card",
+    ".life-band__intro",
+    ".event-card",
+    ".event-mini",
+    ".notice-preview",
+    ".notice-row",
+    ".contact-card",
+    ".principal",
+    ".metric",
+    ".academic-panel",
+    ".plain-col",
+    ".about-panel",
+    ".quote-panel",
+    ".panel--link",
+    ".about-preview",
+    ".at-a-glance",
+    ".map-placeholder",
+    ".form-shell",
+    ".calendar-layout",
+    ".purpose-list li",
+    ".mission-list li",
+    ".faq-item",
+    ".memory-intro",
+    ".memory-summary",
+    ".memory-empty"
+  ].join(",");
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (!reduceMotion.matches && "IntersectionObserver" in window) {
+    var motionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var item = entry.target;
+          motionObserver.unobserve(item);
+          item.classList.add("is-in");
+          item.addEventListener("transitionend", function done(event) {
+            if (event.target !== item || event.propertyName !== "transform") return;
+            item.removeEventListener("transitionend", done);
+            item.classList.remove("motion-item", "is-in");
+          });
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+    );
+
+    var motionGroups = new WeakMap();
+
+    var watchMotion = function (item) {
+      if (item.classList.contains("motion-item")) return;
+      if (item.closest(".modal, .memory-modal, .memory-viewer, [aria-modal='true'], .page-hero")) return;
+      var parent = item.parentElement;
+      var index = motionGroups.get(parent) || 0;
+      motionGroups.set(parent, index + 1);
+      if (index > 0) {
+        item.style.setProperty("--motion-delay", Math.min(index, 4) * 70 + "ms");
+      }
+      item.classList.add("motion-item");
+      motionObserver.observe(item);
+    };
+
+    Array.prototype.forEach.call(doc.querySelectorAll(motionSelector), watchMotion);
+
+    if ("MutationObserver" in window) {
+      new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          Array.prototype.forEach.call(mutation.addedNodes, function (node) {
+            if (node.nodeType !== 1) return;
+            if (node.matches(motionSelector)) watchMotion(node);
+            Array.prototype.forEach.call(node.querySelectorAll(motionSelector), watchMotion);
+          });
+        });
+      }).observe(body, { childList: true, subtree: true });
+    }
+  }
 })();
